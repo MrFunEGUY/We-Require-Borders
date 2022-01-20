@@ -1,0 +1,13 @@
+
+on_game_start = {
+	events = {
+		borders_required.1000			# Set mod Global Flag
+	}
+}
+
+# No scope, like on_game_start
+on_five_year_pulse = {
+	events = {
+		borders_required.1000			# Set mod Global Flag if not set, save-game compatibility
+	}
+}
