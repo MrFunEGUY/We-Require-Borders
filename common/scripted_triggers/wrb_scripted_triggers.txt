@@ -5,9 +5,7 @@
 
 get_border_test = {
 	if = {
-		limit = {
-			has_global_flag = we_require_borders
-		}
+		limit = { has_global_flag = we_require_borders }
 		if = {
 			limit = {
 				OR = {
@@ -65,9 +63,7 @@ get_border_test = {
 
 get_border_test_defense = {
 	if = {
-		limit = {
-			has_global_flag = we_require_borders
-		}
+		limit = { has_global_flag = we_require_borders }
 		if = {
 			limit = {
 				OR = {

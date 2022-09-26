@@ -13,9 +13,7 @@ event = {
 	immediate = {
 
 		if = {
-			limit = {
-				NOT = { has_global_flag = we_require_borders }
-			}
+			limit = { NOT = { has_global_flag = we_require_borders } }
 			set_global_flag = we_require_borders
 		}
 	}
