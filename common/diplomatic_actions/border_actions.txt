@@ -59,10 +59,7 @@ action_form_defensive_pact = {
 				AND = {
 					has_civic = civic_machine_terminator
 					from = {
-						OR = {
-							has_country_flag = synthetic_empire
-							is_machine_empire = yes
-						}
+						is_synthetic_empire = yes
 					}
 				}
 			}
@@ -74,10 +71,7 @@ action_form_defensive_pact = {
 				from = { NOT = { has_civic = civic_machine_terminator } }
 				AND = {
 					from = { has_civic = civic_machine_terminator }
-					OR = {
-						has_country_flag = synthetic_empire
-						is_machine_empire = yes
-					}
+					is_synthetic_empire = yes
 				}
 			}
 		}
@@ -244,10 +238,7 @@ action_guarantee_independence = {
 				from = { NOT = { has_civic = civic_machine_terminator } }
 				AND = {
 					from = { has_civic = civic_machine_terminator }
-					OR = {
-						has_country_flag = synthetic_empire
-						is_machine_empire = yes
-					}
+					is_synthetic_empire = yes
 				}
 			}
 		}
@@ -385,10 +376,7 @@ action_invite_to_federation = {
 				AND = {
 					has_civic = civic_machine_terminator
 					from = {
-						OR = {
-							has_country_flag = synthetic_empire
-							is_machine_empire = yes
-						}
+						is_synthetic_empire = yes
 					}
 				}
 			}
@@ -401,10 +389,7 @@ action_invite_to_federation = {
 				from = { NOT = { has_civic = civic_machine_terminator } }
 				AND = {
 					from = { has_civic = civic_machine_terminator }
-					OR = {
-						has_country_flag = synthetic_empire
-						is_machine_empire = yes
-					}
+					is_synthetic_empire = yes
 				}
 			}
 		}
@@ -678,10 +663,7 @@ action_demand_subjugation = {
 				AND = {
 					has_civic = civic_machine_terminator
 					from = {
-						OR = {
-							has_country_flag = synthetic_empire
-							is_machine_empire = yes
-						}
+						is_synthetic_empire = yes
 					}
 				}
 			}
@@ -693,10 +675,7 @@ action_demand_subjugation = {
 				from = { NOT = { has_civic = civic_machine_terminator } }
 				AND = {
 					from = { has_civic = civic_machine_terminator }
-					OR = {
-						has_country_flag = synthetic_empire
-						is_machine_empire = yes
-					}
+					is_synthetic_empire = yes
 				}
 			}
 		}
@@ -806,10 +785,7 @@ action_ask_to_become_subjugated = {
 				AND = {
 					has_civic = civic_machine_terminator
 					from = {
-						OR = {
-							has_country_flag = synthetic_empire
-							is_machine_empire = yes
-						}
+						is_synthetic_empire = yes
 					}
 				}
 			}
@@ -821,10 +797,7 @@ action_ask_to_become_subjugated = {
 				from = { NOT = { has_civic = civic_machine_terminator } }
 				AND = {
 					from = { has_civic = civic_machine_terminator }
-					OR = {
-						has_country_flag = synthetic_empire
-						is_machine_empire = yes
-					}
+					is_synthetic_empire = yes
 				}
 			}
 		}
@@ -999,10 +972,7 @@ action_pledge_secret_fealty = {
 					fail_text = requires_recipient_not_machine_terminator
 					AND = {
 						from = { has_civic = civic_machine_terminator }
-						OR = {
-							has_country_flag = synthetic_empire
-							is_machine_empire = yes
-						}
+						is_synthetic_empire = yes
 					}
 				}
 			}
@@ -1011,10 +981,7 @@ action_pledge_secret_fealty = {
 					fail_text = diplo_action_no_low_intel
 					AND = {
 						from = { has_civic = civic_machine_terminator }
-						OR = {
-							has_country_flag = synthetic_empire
-							is_machine_empire = yes
-						}
+						is_synthetic_empire = yes
 					}
 				}
 			}
@@ -1066,10 +1033,7 @@ action_pledge_secret_fealty = {
 				AND = {
 					has_civic = civic_machine_terminator
 					from = {
-						OR = {
-							has_country_flag = synthetic_empire
-							is_machine_empire = yes
-						}
+						is_synthetic_empire = yes
 					}
 				}
 			}
