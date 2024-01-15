@@ -3,5 +3,5 @@ tags={
 	"Diplomacy"
 }
 name="We Require Borders"
-supported_version="3.6.*"
+supported_version="3.10.*"
 remote_file_id="2452302093"

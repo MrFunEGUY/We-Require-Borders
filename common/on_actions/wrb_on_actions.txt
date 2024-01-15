@@ -5,6 +5,16 @@ on_game_start = {
 	}
 }
 
+# this = country
+on_monthly_pulse_country = {
+	events = {
+		borders_required.2000			# Get Shared Borders Flag
+		borders_required.2005			# Remove Shared Borders Flag
+		borders_required.2010			# Get Shared Defense Borders Flag
+		borders_required.2015			# Remove Shared Defense Borders Flag
+	}
+}
+
 # No scope, like on_game_start
 on_five_year_pulse = {
 	events = {
