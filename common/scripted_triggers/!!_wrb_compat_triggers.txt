@@ -1,4 +1,3 @@
 has_civic_organic_zealots_active = {
-	optimize_memory
 	always = no
 }

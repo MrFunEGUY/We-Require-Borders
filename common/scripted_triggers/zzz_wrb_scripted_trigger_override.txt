@@ -4,6 +4,5 @@
 #######################################
 
 has_wrb_active = {
-	optimize_memory
-	always = yes
+		always = yes
 }

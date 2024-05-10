@@ -114,10 +114,7 @@ action_guarantee_independence = {
 		}
 
 		hidden_trigger = {
-			OR = {
-				is_subject = no
-				is_auto_state = yes
-			}
+			is_subject = no
 		}
 
 		# Target is not overlord.
@@ -252,8 +249,8 @@ action_invite_to_federation = {
 
 	potential = {
 		hidden_trigger = {
-			is_fallen_machine_empire = no
-			from = { is_fallen_machine_empire = no }
+			is_fallen_empire_machine = no
+			from = { is_fallen_empire_machine = no }
 		}
 		hidden_trigger = {
 			if = {
@@ -353,8 +350,8 @@ action_ask_to_join_federation = {
 
 	potential = {
 		hidden_trigger = {
-			is_fallen_machine_empire = no
-			from = { is_fallen_machine_empire = no }
+			is_fallen_empire_machine = no
+			from = { is_fallen_empire_machine = no }
 		}
 		hidden_trigger = { # No one wants to join an Empire
 			from = {
@@ -547,35 +544,35 @@ action_demand_subjugation = {
 			desc = LACK_OF_TRUST
 		}
 
-		modifier = {
-			add = -1000
-            relative_power = {
-                who = from
-                category = fleet
-                value >= equivalent
-            }
-			desc = RELATIVE_POWER
-		}
+		# modifier = {
+		# 	add = -1000
+        #     relative_power = {
+        #         who = from
+        #         category = fleet
+        #         value >= equivalent
+        #     }
+		# 	desc = RELATIVE_POWER
+		# }
 
-        modifier = {
-			add = 50
-            relative_power = {
-                who = from
-                category = fleet
-                value = inferior
-            }
-			desc = RELATIVE_POWER
-		}
+        # modifier = {
+		# 	add = 50
+        #     relative_power = {
+        #         who = from
+        #         category = fleet
+        #         value = inferior
+        #     }
+		# 	desc = RELATIVE_POWER
+		# }
 
-		modifier = {
-			add = 100
-            relative_power = {
-                who = from
-                category = fleet
-                value = pathetic
-            }
-			desc = RELATIVE_POWER
-		}
+		# modifier = {
+		# 	add = 100
+        #     relative_power = {
+        #         who = from
+        #         category = fleet
+        #         value = pathetic
+        #     }
+		# 	desc = RELATIVE_POWER
+		# }
 	}
 }
 
@@ -693,18 +690,11 @@ action_ask_to_become_subjugated = {
         }
         modifier = {
             mult = 0
-            OR = {
-            	relative_power = {
-            	    who = from
-            	    category = all
-            	    value >= equivalent
-            	}
-            	relative_power = {
-            	    who = from
-            	    category = fleet
-            	    value >= equivalent
-            	}
-            }
+			relative_power = {
+				who = from
+				category = all
+				value >= equivalent
+			}
         }
     }
     ai_acceptance = {
