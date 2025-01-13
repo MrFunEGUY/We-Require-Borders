@@ -15,6 +15,11 @@ The goal of this was to clean up how often the AI would form relationships with 
 
 With these changes, this mod cleans up the diplomatic interactions in the galaxy, leading to a more realistic diplomatic experience.
 
+[hr][/hr]
+
+[h1]Note:[/h1]
+
+- Border changes are updated yearly. You may have to wait some time for a border to be recognized.
 
 [hr][/hr]
 
