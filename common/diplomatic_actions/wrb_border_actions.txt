@@ -47,6 +47,15 @@ action_form_defensive_pact = {
 						value >= 20
 					}
 				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 10
+						}
+					}
+				}
 			}
 		}
 		custom_tooltip = {
@@ -146,6 +155,15 @@ action_guarantee_independence = {
 						value >= 10
 					}
 				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 5
+						}
+					}
+				}
 			}
 		}
 		custom_tooltip = {
@@ -216,6 +234,15 @@ action_support_independence = {
 					trust = {
 						who = root
 						value >= 10
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 5
+						}
 					}
 				}
 			}
@@ -289,8 +316,8 @@ action_invite_to_federation = {
 				is_country_type_with_subjects = yes
 			}
 			custom_tooltip = {
-				fail_text = requires_tradition_the_federation
-				has_tradition = tr_diplomacy_the_federation
+				fail_text = requires_tech_federation_code
+				has_technology = tech_federation_code
 			}
 		}
 		diplomacy_is_not_homicidal = yes
@@ -309,6 +336,15 @@ action_invite_to_federation = {
 					trust = {
 						who = root
 						value >= 30
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 15
+						}
 					}
 				}
 			}
@@ -391,6 +427,15 @@ action_ask_to_join_federation = {
 					trust = {
 						who = root
 						value >= 30
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 15
+						}
 					}
 				}
 			}
@@ -495,6 +540,15 @@ action_demand_subjugation = {
 						trust = {
 							who = root
 							value >= 50
+						}
+					}
+					AND = {
+						has_valid_civic = civic_hive_familiar_face
+						from = {
+							trust = {
+								who = root
+								value >= 25
+							}
 						}
 					}
 				}
@@ -666,6 +720,15 @@ action_ask_to_become_subjugated = {
 						value >= 50
 					}
 				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 25
+						}
+					}
+				}
 			}
 		}
 		custom_tooltip = {
@@ -752,6 +815,15 @@ action_pledge_secret_fealty = {
 						value >= 50
 					}
 				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 25
+						}
+					}
+				}
 			}
 		}
 		custom_tooltip = {
@@ -805,6 +877,15 @@ action_propose_secret_fealty = {
 					trust = {
 						who = root
 						value >= 50
+					}
+				}
+				AND = {
+					has_valid_civic = civic_hive_familiar_face
+					from = {
+						trust = {
+							who = root
+							value >= 25
+						}
 					}
 				}
 			}
