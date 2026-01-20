@@ -73,13 +73,6 @@ country_event = {
 			}
 			remove_country_flag = shares_borders_with_@root
 		}
-
-		#if = {
-		#	limit = { NOT = { is_variable_set = wrb_bi_yearly_variable_2 } }
-		#	set_variable = { which = wrb_bi_yearly_variable_2 value = 1 }
-		#	country_event = { id = borders_required.2005 days = 180 }
-		#}
-		#else = { clear_variable = wrb_bi_yearly_variable_2 }
 	}
 }
 
@@ -137,12 +130,5 @@ country_event = {
 			}
 			remove_country_flag = shares_defense_borders_with_@root
 		}
-
-		#if = {
-		#	limit = { NOT = { is_variable_set = wrb_bi_yearly_variable_4 } }
-		#	set_variable = { which = wrb_bi_yearly_variable_4 value = 1 }
-		#	country_event = { id = borders_required.2015 days = 180 }
-		#}
-		#else = { clear_variable = wrb_bi_yearly_variable_4 }
 	}
 }
