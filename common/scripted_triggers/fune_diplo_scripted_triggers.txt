@@ -21,8 +21,13 @@ diplomacy_is_not_gestalt = {
 }
 
 diplomacy_is_not_scorched = {
-	# diplomacy_actor_is_not_scorched = yes
-	# diplomacy_recipient_is_not_scorched = yes
+	diplomacy_actor_is_not_scorched = yes
+	diplomacy_recipient_is_not_scorched = yes
+}
+
+diplomacy_is_not_khan = {
+	diplomacy_actor_is_not_khan = yes
+	diplomacy_recipient_is_not_khan = yes
 }
 
 diplomacy_is_not_pompous = {
@@ -114,6 +119,37 @@ diplomacy_recipient_is_not_scorched = {
 					is_genocidal_infernal = no
 					from = { is_infernal_empire = yes }
 				}
+			}
+		}
+	}
+}
+
+## Khan
+diplomacy_actor_is_not_khan = {
+	custom_tooltip = {
+		fail_text = "requires_actor_not_khan"
+		NOT = { has_country_flag = heir_of_the_khan_khan }
+	}
+}
+diplomacy_recipient_is_not_khan = {
+	if = {
+		limit = { from = { has_country_flag = heir_of_the_khan_khan } }
+		if = {
+			limit = {
+				has_intel = {
+					who = from
+					intel = civics
+				}
+			}
+			custom_tooltip = {
+				fail_text = "requires_recipient_not_khan"
+				from = { NOT = { has_country_flag = heir_of_the_khan_khan } }
+			}
+		}
+		else = {
+			custom_tooltip = {
+				fail_text = diplo_action_no_low_intel
+				always = no
 			}
 		}
 	}
