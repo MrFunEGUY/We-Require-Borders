@@ -1,32 +1,15 @@
 
-on_game_start = {
-	events = {
-		borders_required.1000			# Set mod Global Flag
-	}
-}
-
 on_yearly_pulse_country = {
 	events = {
-		borders_required.2000			# Get Shared Borders Flag
-		#borders_required.2005			# Remove Shared Borders Flag
-		borders_required.2010			# Get Shared Defense Borders Flag
-		#borders_required.2015			# Remove Shared Defense Borders Flag
+		borders_required.1000			# Get Shared Borders Flag
+		borders_required.1010			# Get Shared Defense Borders Flag
 	}
 }
 
 # this = country
 on_monthly_pulse_country = {
 	events = {
-		#borders_required.2000			# Get Shared Borders Flag
-		borders_required.2005			# Remove Shared Borders Flag
-		#borders_required.2010			# Get Shared Defense Borders Flag
-		borders_required.2015			# Remove Shared Defense Borders Flag
-	}
-}
-
-# No scope, like on_game_start
-on_five_year_pulse = {
-	events = {
-		borders_required.1000			# Set mod Global Flag if not set, save-game compatibility
+		borders_required.1005			# Remove Shared Borders Flag
+		borders_required.1015			# Remove Shared Defense Borders Flag
 	}
 }

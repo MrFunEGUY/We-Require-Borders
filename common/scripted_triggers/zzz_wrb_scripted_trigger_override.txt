@@ -3,6 +3,4 @@
 ### We Require Borders by MrFunEGUY ###
 #######################################
 
-has_wrb_active = {
-		always = yes
-}
+has_wrb_active = { always = yes }

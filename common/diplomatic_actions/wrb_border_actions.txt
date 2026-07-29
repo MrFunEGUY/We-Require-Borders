@@ -180,6 +180,17 @@ action_guarantee_independence = {
 		# Shared Borders
 		get_border_test_defense = yes
 	}
+
+	on_accept = {
+		hidden_effect = {
+			country_event = { # Patron Objective Counter: po_establish_diplomatic_pact
+				id = shroud.10420
+				scopes = {
+					from = from
+				}
+			}
+		}
+	}
 }
 
 # Support independence of a subject, makes you help them if they declare an independence war.
@@ -263,6 +274,17 @@ action_support_independence = {
 		# Shared Borders
 		get_border_test_defense = yes
 	}
+
+	on_accept = {
+		hidden_effect = {
+			country_event = { # Patron Objective Counter: po_establish_diplomatic_pact
+				id = shroud.10425
+				scopes = {
+					from = from
+				}
+			}
+		}
+	}
 }
 
 # Creates a federation between two empires or invites an empire to an existing federation. Requires unanimous vote from the federation, if one exists already.
@@ -291,11 +313,9 @@ action_invite_to_federation = {
 				is_overlord_to = FROM
 			}
 		}
-		hidden_trigger = {
-			NOT = {
-				has_origin = origin_endbringers
-			}
-		}
+		hidden_trigger = { NOT = { has_origin = origin_endbringers } }
+		#########
+		vfef_fed_inv_diplo_trigger = yes
 	}
 
 	possible = {
@@ -370,19 +390,41 @@ action_invite_to_federation = {
 			}
 		}
 		diplomacy_recipient_is_not_pompous_bypass = yes
-		# Members of the Galactic Empire can't be in federations
-		custom_tooltip = {
-			fail_text = "requires_actor_recipient_not_in_galactic_empire"
-			NAND = {
-				has_galactic_emperor = yes
-				OR = {
-					is_galactic_community_member = yes
-					from = { is_galactic_community_member = yes }
+		if = { # Members of the Galactic Empire can't form federations
+			limit = { has_vfef = yes }
+			if = {
+				limit = { has_galactic_emperor = yes }
+				custom_tooltip = {
+					fail_text = "only_galatic_emperor"
+					is_galactic_emperor = yes
 				}
 			}
 		}
+		else = { # Members of the Galactic Empire can't be in federations
+			custom_tooltip = {
+				fail_text = "requires_actor_recipient_not_in_galactic_empire"
+				NAND = {
+					has_galactic_emperor = yes
+					OR = {
+						is_galactic_community_member = yes
+						from = { is_galactic_community_member = yes }
+					}
+				}
+			}	
+		}
 		# Shared Borders
 		get_border_test = yes
+	}
+
+	on_accept = {
+		hidden_effect = {
+			country_event = { # Patron Objective Counter: po_establish_diplomatic_pact
+				id = shroud.10400
+				scopes = {
+					from = from
+				}
+			}
+		}
 	}
 }
 
@@ -402,20 +444,9 @@ action_ask_to_join_federation = {
 			is_fallen_empire_machine = no
 			from = { is_fallen_empire_machine = no }
 		}
-		hidden_trigger = { # No one wants to join an Empire
-			from = {
-				NAND = {
-					has_federation = yes
-					federation = { has_federation_type = empire_federation }
-					NOT = { is_overlord_to = root }
-				}
-			}
-		}
-		hidden_trigger = {
-			NOT = {
-				has_origin = origin_endbringers
-			}
-		}
+		hidden_trigger = { NOT = { has_origin = origin_endbringers } }
+		#############
+		vfef_fed_ask_diplo_trigger = yes
 	}
 
 	possible = {
@@ -467,19 +498,29 @@ action_ask_to_join_federation = {
 				has_active_tradition = tr_diplomacy_diplomatic_networking
 			}
 		}
-		custom_tooltip = {
-			fail_text = requires_actor_to_be_federation_leader
-			from = {
-				if = {
-					limit = {
-						federation = {
-							OR = {
-								has_federation_law = invite_members_president_vote_empire
-								has_federation_law = invite_members_president_vote_hegemony
-							}
+		if = {
+			limit = { exists = federation }
+			if = {
+				limit = { federation = { is_empire_fed = yes } }
+				custom_tooltip = {
+					fail_text = requires_actor_to_be_empire_leader
+					from = {
+						if = {
+							limit = { federation = { has_empire_inv_law = yes } }
+							is_federation_leader = yes
 						}
 					}
-					is_federation_leader = yes
+				}
+			}
+			else = {
+				custom_tooltip = {
+					fail_text = requires_actor_to_be_federation_leader
+					from = {
+						if = {
+							limit = { federation = { has_federation_law = invite_members_president_vote_hegemony } }
+							is_federation_leader = yes
+						}
+					}
 				}
 			}
 		}

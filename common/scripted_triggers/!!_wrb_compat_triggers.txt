@@ -1,3 +1,8 @@
-has_civic_organic_zealots_active = {
-	always = no
-}
+has_vfef = { always = no }
+
+has_civic_organic_zealots_active = { always = no }
+
+vfef_fed_inv_diplo_trigger = { always = yes }
+vfef_fed_ask_diplo_trigger = { always = yes }
+is_empire_fed = { always = no }
+has_empire_inv_law = { always = no }

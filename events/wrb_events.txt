@@ -4,24 +4,9 @@
 
 namespace = borders_required
 
-event = {
-	id = borders_required.1000
-	hide_window = yes
-	is_triggered_only = yes
-	
-	
-	immediate = {
-
-		if = {
-			limit = { NOT = { has_global_flag = we_require_borders } }
-			set_global_flag = we_require_borders
-		}
-	}
-}
-
 # Get Shared Borders Flag
 country_event = {
-	id = borders_required.2000
+	id = borders_required.1000
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -45,7 +30,7 @@ country_event = {
 		if = {
 			limit = { NOT = { is_variable_set = wrb_bi_yearly_variable } }
 			set_variable = { which = wrb_bi_yearly_variable value = 1 }
-			country_event = { id = borders_required.2000 days = 180 }
+			country_event = { id = borders_required.1000 days = 180 }
 		}
 		else = { clear_variable = wrb_bi_yearly_variable }
 	}
@@ -53,7 +38,7 @@ country_event = {
 
 # Remove Shared Borders Flag
 country_event = {
-	id = borders_required.2005
+	id = borders_required.1005
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -78,7 +63,7 @@ country_event = {
 
 # Get Shared Defense Borders Flag
 country_event = {
-	id = borders_required.2010
+	id = borders_required.1010
 	hide_window = yes
 	is_triggered_only = yes
 
@@ -99,10 +84,10 @@ country_event = {
 			set_country_flag = shares_defense_borders_with_@root
 		}
 
-		if = {
+		if = { ## Call twice / year
 			limit = { NOT = { is_variable_set = wrb_bi_yearly_variable_3 } }
 			set_variable = { which = wrb_bi_yearly_variable_3 value = 1 }
-			country_event = { id = borders_required.2010 days = 180 }
+			country_event = { id = borders_required.1010 days = 180 }
 		}
 		else = { clear_variable = wrb_bi_yearly_variable_3 }
 	}
@@ -110,7 +95,7 @@ country_event = {
 
 # Remove Shared Defense Borders Flag
 country_event = {
-	id = borders_required.2015
+	id = borders_required.1015
 	hide_window = yes
 	is_triggered_only = yes
 
